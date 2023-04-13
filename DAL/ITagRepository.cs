@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public interface ITagRepository
+    public interface ITagRepository: IGenericRepository<Tag>
     {
         IEnumerable<Tag> GetAll();
         Tag GetById(int id);

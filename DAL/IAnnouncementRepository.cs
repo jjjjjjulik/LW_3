@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public interface IAnnouncementRepository
+    public interface IAnnouncementRepository: IGenericRepository<Announcement>
     {
         IEnumerable<Announcement> GetAll();
         Announcement GetById(int id);

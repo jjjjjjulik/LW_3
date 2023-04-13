@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public interface ICategoryRepository
+    public interface ICategoryRepository: IGenericRepository<Category>
     {
         IEnumerable<Category> GetAll();
         Category GetById(int id);
