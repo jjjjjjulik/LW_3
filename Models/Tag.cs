@@ -9,5 +9,6 @@ namespace Models
         public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<Announcement> Announcements { get; set; } = new List<Announcement>();
+        public ICollection<AnnouncementTag> AnnouncementTags { get; set; }
     }
 }
