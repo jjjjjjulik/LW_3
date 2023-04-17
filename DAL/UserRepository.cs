@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,44 @@ namespace DAL
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
+
+        private readonly MyProjectDbContext _context;
+
         public UserRepository(MyProjectDbContext context) : base(context)
         {
+            _context = context;
         }
 
-        // Тут можна додати специфічні методи для UserRepository
+        public IEnumerable<User> GetAll()
+        {
+            return _context.Users.ToList();
+        }
+
+        public User GetById(int id)
+        {
+            return _context.Users.FirstOrDefault(u => u.Id == id);
+        }
+
+        public void Add(User entity)
+        {
+            _context.Users.Add(entity);
+            _context.SaveChanges();
+        }
+
+        public void Update(User entity)
+        {
+            _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            var user = GetById(id);
+            if (user != null)
+            {
+                _context.Users.Remove(user);
+                _context.SaveChanges();
+            }
+        }
     }
 }
