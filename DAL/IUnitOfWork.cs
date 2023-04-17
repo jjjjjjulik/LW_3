@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         IAnnouncementRepository AnnouncementRepository { get; }
         ICategoryRepository CategoryRepository { get; }
