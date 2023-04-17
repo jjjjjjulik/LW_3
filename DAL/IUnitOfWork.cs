@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal interface IUnitOfWork
+    internal interface IUnitOfWork : IDisposable
     {
+        IAnnouncementRepository AnnouncementRepository { get; }
+        ICategoryRepository CategoryRepository { get; }
+        ITagRepository TagRepository { get; }
+        IUserRepository UserRepository { get; }
+        int SaveChanges();
     }
 }
