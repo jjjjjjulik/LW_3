@@ -1051,7 +1051,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "DAL": "1.0.0"
+          "DAL": "1.0.0",
+          "Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BLL.dll": {}

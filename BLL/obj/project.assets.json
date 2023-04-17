@@ -3254,7 +3254,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "DAL >= 1.0.0"
+      "DAL >= 1.0.0",
+      "Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3291,6 +3292,9 @@
           "projectReferences": {
             "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\DAL\\DAL.csproj": {
               "projectPath": "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\DAL\\DAL.csproj"
+            },
+            "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\Models\\Models.csproj": {
+              "projectPath": "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\Models\\Models.csproj"
             }
           }
         }

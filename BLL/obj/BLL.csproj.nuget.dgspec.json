@@ -34,6 +34,9 @@
             "projectReferences": {
               "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\DAL\\DAL.csproj": {
                 "projectPath": "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\DAL\\DAL.csproj"
+              },
+              "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\Models\\Models.csproj": {
+                "projectPath": "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\Models\\Models.csproj"
               }
             }
           }
