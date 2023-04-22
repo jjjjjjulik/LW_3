@@ -13,3 +13,5 @@ D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\DAL\obj\Debug\net6.0
 D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\DAL\obj\Debug\net6.0\refint\DAL.dll
 D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\DAL\obj\Debug\net6.0\DAL.pdb
 D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
