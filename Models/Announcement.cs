@@ -15,5 +15,6 @@ namespace Models
         public Category Category { get; set; }
         public ICollection<Tag> Tags { get; set; } = new List<Tag>();
         public ICollection<AnnouncementTag> AnnouncementTags { get; set; }
+        public bool IsActive { get; set; }
     }
 }

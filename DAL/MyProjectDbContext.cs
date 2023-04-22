@@ -11,6 +11,9 @@ namespace DAL
 {
     public class MyProjectDbContext : DbContext
     {
+        public MyProjectDbContext() : base()
+        {
+        }
         public MyProjectDbContext(DbContextOptions<MyProjectDbContext> options)
             : base(options)
         {

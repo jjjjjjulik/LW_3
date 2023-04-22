@@ -3273,7 +3273,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BLL >= 1.0.0"
+      "BLL >= 1.0.0",
+      "Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3310,6 +3311,9 @@
           "projectReferences": {
             "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\BLL\\BLL.csproj": {
               "projectPath": "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\BLL\\BLL.csproj"
+            },
+            "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\Models\\Models.csproj": {
+              "projectPath": "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\Models\\Models.csproj"
             }
           }
         }
