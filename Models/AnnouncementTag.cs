@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
+    // Клас AnnouncementTag представляє сутність зв'язку багато-до-багатьох між об'єктами Announcement та Tag
     public class AnnouncementTag
     {
         public int AnnouncementId { get; set; }

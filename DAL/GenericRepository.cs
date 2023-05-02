@@ -6,34 +6,37 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    // Клас репозиторію з загальними методами для доступу до таблиць бази даних
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class 
     {
+        // Закрите поле контексту бази даних
         private readonly DbContext _context;
-        private readonly DbSet<TEntity> _dbSet;
-
-        public GenericRepository(DbContext context)
+        // Закрите поле DbSet<TEntity>, що використовується для роботи з таблицею сутностей TEntity
+        private readonly DbSet<TEntity> _dbSet; 
+        // Конструктор класу, який приймає контекст бази даних і встановлює змінні поля
+        public GenericRepository(DbContext context) 
         {
             _context = context;
             _dbSet = context.Set<TEntity>();
         }
-
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        // Асинхронний метод для отримання всіх записів таблиці TEntity з бази даних
+        public async Task<IEnumerable<TEntity>> GetAllAsync() 
         {
             return await _dbSet.ToListAsync();
         }
-
-        public async Task<TEntity> GetByIdAsync(int id)
+        // Асинхронний метод для отримання запису таблиці TEntity з бази даних за вказаним ідентифікатором
+        public async Task<TEntity> GetByIdAsync(int id) 
         {
             return await _dbSet.FindAsync(id);
         }
-
-        public async Task<TEntity> AddAsync(TEntity entity)
+        // Асинхронний метод для додавання запису таблиці TEntity до бази даних
+        public async Task<TEntity> AddAsync(TEntity entity) 
         {
             await _dbSet.AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity;
         }
-
+        // Синхронний метод для оновлення запису таблиці TEntity в базі даних
         public TEntity Update(TEntity entity)
         {
             _dbSet.Attach(entity);
@@ -41,7 +44,7 @@ namespace DAL
             _context.SaveChanges();
             return entity;
         }
-
+        // Асинхронний метод для видалення запису таблиці TEntity з бази даних за вказаним ідентифікатором
         public async Task<bool> DeleteAsync(int id)
         {
             TEntity entity = await GetByIdAsync(id);

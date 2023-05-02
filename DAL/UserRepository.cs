@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
+    // Клас репозиторію для роботи з сутністю User
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
 
@@ -17,7 +18,7 @@ namespace DAL
         {
             _context = context;
         }
-
+        // Методи для роботи з таблицею Users
         public IEnumerable<User> GetAll()
         {
             return _context.Users.ToList();

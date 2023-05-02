@@ -8,38 +8,40 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
+    // Клас репозиторію для роботи з сутністю Category
+    public class CategoryRepository : GenericRepository<Category>, ICategoryRepository 
     {
-        private readonly MyProjectDbContext _context;
-
-        public CategoryRepository(MyProjectDbContext context) : base(context)
+        // Закрите поле контексту бази даних
+        private readonly MyProjectDbContext _context; 
+        // Конструктор класу, який приймає контекст бази даних і передає його базовому класу
+        public CategoryRepository(MyProjectDbContext context) : base(context) 
         {
             _context = context;
         }
-
-        public IEnumerable<Category> GetAll()
+        // Метод для отримання всіх записів таблиці Categories з бази даних
+        public IEnumerable<Category> GetAll()  
         {
             return _context.Categories.ToList();
         }
-
-        public Category GetById(int id)
+        // Метод для отримання запису таблиці Categories з бази даних за вказаним ідентифікатором
+        public Category GetById(int id) 
         {
             return _context.Categories.FirstOrDefault(c => c.Id == id);
         }
-
-        public void Add(Category entity)
+        // Метод для оновлення запису таблиці Categories в базі даних
+        public void Add(Category entity)  
         {
             _context.Categories.Add(entity);
             _context.SaveChanges();
         }
-
-        public void Update(Category entity)
+        // Метод для оновлення запису таблиці Categories в базі даних
+        public void Update(Category entity)  
         {
             _context.Entry(entity).State = EntityState.Modified;
             _context.SaveChanges();
         }
-
-        public void Delete(int id)
+        // Метод для видалення запису таблиці Categories з бази даних за вказаним ідентифікатором
+        public void Delete(int id) 
         {
             var category = GetById(id);
             if (category != null)

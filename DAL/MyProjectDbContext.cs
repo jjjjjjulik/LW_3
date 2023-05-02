@@ -9,26 +9,31 @@ using Models;
 
 namespace DAL
 {
+    // Клас контексту бази даних
     public class MyProjectDbContext : DbContext
     {
-        public MyProjectDbContext() : base()
+        public MyProjectDbContext() : base() // Конструктор за замовчуванням
         {
         }
-        public MyProjectDbContext(DbContextOptions<MyProjectDbContext> options)
+        // Конструктор, який отримує параметр типу DbContextOptions<MyProjectDbContext> і передає його в базовий конструктор
+        public MyProjectDbContext(DbContextOptions<MyProjectDbContext> options) 
             : base(options)
         {
+            // Перевірка і створення бази даних, якщо вона ще не існує
+            Database.EnsureCreated();
         }
-
+        // Властивості DbSet для кожної таблиці в базі даних
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<AnnouncementTag> AnnouncementTags { get; set; }
-
+        // Метод OnModelCreating викликається під час налаштування моделі бази даних
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            // Додавання початкових даних для таблиць Users, Categories та Tags
             modelBuilder.Entity<User>().HasData(
                 new User { Id = 1, FirstName = "John", LastName = "Big", Email = "john@example.com", PasswordHash = "password1" },
                 new User { Id = 2, FirstName = "Mary", LastName = "Newman", Email = "mary@example.com", PasswordHash = "password2" },
@@ -44,6 +49,7 @@ namespace DAL
         new Tag { Id = 2, Name = "Tag2" },
         new Tag { Id = 3, Name = "Tag3" }
 );
+            // Налаштування моделі таблиці Users
             modelBuilder.Entity<User>()
     .HasKey(u => u.Id);
             modelBuilder.Entity<User>()
@@ -61,7 +67,7 @@ namespace DAL
             modelBuilder.Entity<User>()
     .Property(u => u.Id)
     .IsRequired();
-
+            // Налаштування моделі таблиці Categories
             modelBuilder.Entity<Category>()
     .HasKey(u => u.Id);
             modelBuilder.Entity<Category>()
@@ -70,7 +76,7 @@ namespace DAL
             modelBuilder.Entity<Category>()
                 .Property(u => u.Id)
                 .IsRequired();
-
+            // Налаштування моделі таблиці Tags
             modelBuilder.Entity<Tag>()
 .HasKey(u => u.Id);
             modelBuilder.Entity<Tag>()
@@ -79,7 +85,7 @@ namespace DAL
             modelBuilder.Entity<Tag>()
                 .Property(u => u.Id)
                 .IsRequired();
-
+            // Налаштування моделі таблиці Announcements
             modelBuilder.Entity<Announcement>()
                 .HasOne(a => a.Category)
                 .WithMany(c => c.Announcements)
@@ -105,6 +111,7 @@ namespace DAL
 
             base.OnModelCreating(modelBuilder);
         }
+        // Метод OnConfiguring викликається під час налаштування параметрів підключення до бази даних
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=myDatabase.db");

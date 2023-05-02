@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "eJQqfR3F3GbAbBm4gJ6oVEOHPFt3H2AucNJvACHx80JRTH11ZCB0u9MuKKrMq1HALs/EKuukaSnlmpkCnk0EQg==",
+  "dgSpecHash": "+jp9LXPrXRdnKcshNzA/SLPtVtmjLrhwArULSMR9bGkxCqN/rjHmNE+1DE017MR1mA1nGlkwD8/JMzyP+SrWig==",
   "success": true,
   "projectFilePath": "D:\\Unik\\2курс\\АтаППЗ\\Лабораторна3\\LW_3\\Models\\Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\IVAN\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.5\\microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
+    "C:\\Users\\IVAN\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
+    "C:\\Users\\IVAN\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
+    "C:\\Users\\IVAN\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
+    "C:\\Users\\IVAN\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\IVAN\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
+    "C:\\Users\\IVAN\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
   "logs": []
 }

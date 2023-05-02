@@ -103,3 +103,6 @@ D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\UI\bin\Debug\net6.0\
 D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\UI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\UI\bin\Debug\net6.0\Mono.TextTemplating.dll
 D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\UI\bin\Debug\net6.0\System.CodeDom.dll
+D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\UI\bin\Debug\net6.0\SQLite-net.dll
+D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\UI\bin\Debug\net6.0\SQLitePCLRaw.nativelibrary.dll
+D:\Unik\2курс\АтаППЗ\Лабораторна3\LW_3\UI\bin\Debug\net6.0\SQLitePCLRaw.provider.dynamic_cdecl.dll

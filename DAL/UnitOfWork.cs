@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
+    // Клас, який реалізує інтерфейс IUnitOfWork та забезпечує зручний доступ до всіх репозиторіїв
     public class UnitOfWork : IUnitOfWork
     {
         private readonly MyProjectDbContext _context;
-
+        // Приватні змінні для збереження екземплярів кожного репозиторію
         private IAnnouncementRepository _announcementRepository;
         private ICategoryRepository _categoryRepository;
         private ITagRepository _tagRepository;
         private IUserRepository _userRepository;
-
+        // Конструктор, який отримує об'єкт контексту бази даних
         public UnitOfWork(MyProjectDbContext context)
         {
             _context = context;
         }
-
+        // Властивості, які повертають екземпляри кожного репозиторію при першому зверненні до властивості
         public IAnnouncementRepository AnnouncementRepository
         {
             get
@@ -67,14 +68,14 @@ namespace DAL
                 return _userRepository;
             }
         }
-
+        // Метод для збереження всіх змін до бази даних
         public int SaveChanges()
         {
             return _context.SaveChanges();
         }
-
+        // Змінна, яка вказує, чи було вже звільнено ресурси
         private bool _disposed = false;
-
+        // Метод для звільнення ресурсів
         protected virtual void Dispose(bool disposing)
         {
             if (!_disposed)
@@ -87,6 +88,7 @@ namespace DAL
             _disposed = true;
         }
 
+        // Реалізація інтерфейсу IDisposable
         public void Dispose()
         {
             Dispose(true);

@@ -15,22 +15,22 @@ namespace BLL
         {
             _unitOfWorkFactory = unitOfWorkFactory;
         }
-
+        //створює об'єкт типу AnnouncementService
         public IAnnouncementService CreateAnnouncementService()
         {
             return new AnnouncementService(_unitOfWorkFactory());
         }
-
+        //створює об'єкт типу CategoryService
         public ICategoryService CreateCategoryService()
         {
             return new CategoryService(_unitOfWorkFactory());
         }
-
+        //створює об'єкт типу TagService
         public ITagService CreateTagService()
         {
             return new TagService(_unitOfWorkFactory());
         }
-
+        //створює об'єкт типу UserService
         public IUserService CreateUserService()
         {
             return new UserService(_unitOfWorkFactory());

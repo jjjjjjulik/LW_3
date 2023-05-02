@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class TagRepository : GenericRepository<Tag>, ITagRepository
+    // Клас репозиторію для роботи з сутністю Tag
+    public class TagRepository : GenericRepository<Tag>, ITagRepository 
     {
         private readonly MyProjectDbContext _context;
 
@@ -16,6 +17,7 @@ namespace DAL
         {
             _context = context;
         }
+        // Методи для роботи з таблицею Tags
         public IEnumerable<Tag> GetAll()
         {
             return _context.Tags.ToList();
